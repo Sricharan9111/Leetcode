@@ -10,5 +10,4 @@ def number = 5
 def result = factorial(number)
 println("Factorial of $number is: $result")
 
-#test123
 
