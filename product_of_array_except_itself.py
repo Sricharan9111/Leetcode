@@ -1,26 +1,43 @@
-class Solution:
-    def productExceptSelf(self,nums:List[int])->List[int]:
-        n = len(nums)
-        # Initialize left and right arrays
-        left_products = [1] * n
-        right_products = [1] * n
-        # Calculate left products
-        left_product = 1
-        for i in range(1, n):
-            left_product *= nums[i - 1]
-            left_products[i] = left_product
-    
-    # Calculate right products
-        right_product = 1
-        for i in range(n - 2, -1, -1):
-            right_product *= nums[i + 1]
-            right_products[i] = right_product
-    
-    # Calculate the final answer
-        result = [1]*n
-        for i in range(n):
-            result[i] = left_products[i]*right_products[i]
-    
-        return result
-        hello hello
+def add(x, y):
+    return x + y
+
+def subtract(x, y):
+    return x - y
+
+def multiply(x, y):
+    return x * y
+
+def divide(x, y):
+    if y == 0:
+        return "Cannot divide by zero!"
+    else:
+        return x / y
+
+print("Select operation:")
+print("1. Add")
+print("2. Subtract")
+print("3. Multiply")
+print("4. Divide")
+
+while True:
+    choice = input("Enter choice (1/2/3/4): ")
+
+    if choice in ('1', '2', '3', '4'):
+        num1 = float(input("Enter first number: "))
+        num2 = float(input("Enter second number: "))
+
+        if choice == '1':
+            print("Result:", add(num1, num2))
+        elif choice == '2':
+            print("Result:", subtract(num1, num2))
+        elif choice == '3':
+            print("Result:", multiply(num1, num2))
+        elif choice == '4':
+            print("Result:", divide(num1, num2))
+    else:
+        print("Invalid Input")
+
+    again = input("Do you want to perform another calculation? (yes/no): ")
+    if again.lower() != 'yes':
+        break
 
