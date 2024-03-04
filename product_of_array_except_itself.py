@@ -22,4 +22,5 @@ class Solution:
             result[i] = left_products[i]*right_products[i]
     
         return result
+        hello hello
 
